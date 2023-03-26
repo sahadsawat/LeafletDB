@@ -130,38 +130,4 @@ if('DELETE_SEEOBJ' == $action){
     $conn->close();
     return;
 }
-
-	// $db = mysqli_connect('localhost','root','','db_app_leaflet');
-	// if (!$db) {
-	// 	echo "Database connection faild";
-	// }
-    // mysqli_set_charset($db, "utf8");
-    
-    // // $repobjid = $_POST['reportobj_id'];
-	// $repobjname = $_POST['reportobj_name'];
-	// $urlPathImage = $_POST['reportobj_photo'];
-    // // $repobjstatus = $_POST['reportobj_status'];
-	// $repobjdetail = $_POST['reportobj_detail'];
-    // $repobjdate = $_POST['reportobj_date'];
-    // $_selectedcateName = $_POST['cate_id'];
-    // $_selectedlocatName = $_POST['locat_id'];
-    // // $userid = $_POST['user_id'];
-
-
-	// $sql = "SELECT reportobj_name FROM reportobj WHERE reportobj_name = '$repobjname'";
-
-	// $result = mysqli_query($db,$sql);
-	// $count = mysqli_num_rows($result);
-
-	// if ($count == 1) {
-	// 	echo json_encode("Error");
-	// }else{
-	// 	$insert = "INSERT INTO reportobj(reportobj_name,reportobj_photo,reportobj_detail,reportobj_date,cat_id,locat_id)VALUES('$repobjname','$urlPathImage','$repobjdetail','$repobjdate','$_selectedcateName','$_selectedlocatName')";
-	// 	// $insert = "INSERT INTO reportobj(reportobj_name,reportobj_detail,cate_id,locat_id)VALUES('$repobjname','$repobjdetail','$cate_id','$locatid')";
-	// 	$query = mysqli_query($db,$insert);
-	// 	if ($query) {
-	// 		echo json_encode("Success");
-	// 	}
-	// }
-
 ?>

@@ -55,14 +55,14 @@ if('ADD_REPOBJ' == $action){
     
     $repobjname = $_POST['reportobj_name'];
     $urlPathImage = $_POST['reportobj_photo'];
-    // $repobjstatus = $_POST['reportobj_status'];
+    $repobjstatus = $_POST['reportobj_status'];
 	$repobjdetail = $_POST['reportobj_detail'];
     $repobjdate = $_POST['reportobj_date'];
     $cateid = $_POST['cate_id'];
     $locatid = $_POST['locat_id'];
     $userid = $_POST['user_id'];
     
-    $sql = "INSERT INTO reportobj(reportobj_name,reportobj_photo,reportobj_detail,reportobj_date,cate_id,locat_id,user_id)VALUES('$repobjname','$urlPathImage','$repobjdetail','$repobjdate','$cateid','$locatid','$userid')";
+    $sql = "INSERT INTO reportobj(reportobj_name,reportobj_photo,reportobj_status,reportobj_detail,reportobj_date,cate_id,locat_id,user_id)VALUES('$repobjname','$urlPathImage','$repobjstatus','$repobjdetail','$repobjdate','$cateid','$locatid','$userid')";
     $result = $conn->query($sql);
     echo 'success';
     return;
