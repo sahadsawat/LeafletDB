@@ -1,13 +1,12 @@
 <?php
+include "./connect2.php";
+mysqli_set_charset($link, "utf8");
 
-$db = mysqli_connect('localhost','root','','db_app_leaflet');
-mysqli_set_charset($db, "utf8");
-
-if (!$db) {
+if (!$link) {
     echo "database connect faild";
 }
 
-$person = $db->query("SELECT * FROM faculty");
+$person = $link->query("SELECT * FROM faculty");
 $list = array();
 
 while ($rowdata = $person->fetch_assoc()) {

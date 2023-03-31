@@ -1,21 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_app_leaflet";
+include "./connect.php";
 $table = "seeobj";
 $table2 = "location";
-
 $action = isset($_POST['action']) ? $_POST['action'] : '';
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn, "utf8");
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 if('GET_ALL' == $action){
     $dbdata = array();
     $sql = "SELECT t1.seeobj_id ,t1.seeobj_name,t1.seeobj_photo,t1.seeobj_status,t1.seeobj_detail,t1.seeobj_date,t1.cate_id,t1.locat_id,t1.user_id,t2.locat_name,t3.user_email FROM $table t1 INNER JOIN $table2 t2 ON t1.locat_id = t2.locat_id INNER JOIN user t3 ON t3.user_id = t1.user_id ORDER BY seeobj_id DESC";

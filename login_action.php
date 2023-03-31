@@ -1,11 +1,11 @@
 <?php 
-	$db = mysqli_connect('localhost','root','','db_app_leaflet');
+	include "./connect2.php";
 
 	$useremail = $_POST['user_email'];
 	$password = $_POST['user_password'];
 
 	$sql = "SELECT * FROM user WHERE user_email = '$useremail' AND user_password = '$password'";
-	$result = mysqli_query($db,$sql);
+	$result = mysqli_query($link,$sql);
 	$count = mysqli_num_rows($result);
 
 	if ($count == 1) {

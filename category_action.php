@@ -1,19 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_app_leaflet";
+include "./connect.php";
 $table = "category";
-
 $action = isset($_POST['action']) ? $_POST['action'] : '';
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn, "utf8");
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 if('GET_ALL' == $action){
     $dbdata = array();
